@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
+  <div id="app" class="bg-gray-900">
     <Navbar />
     <Menu :show="menuOpen" />
     <Command v-if="showCommandLine" />
     <Pointer />
-    <div class="scroll-container">
+    <div class="scroll-container bg-gray-900 text-white">
       <router-view/>
     </div>
   </div>

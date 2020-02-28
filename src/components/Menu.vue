@@ -129,6 +129,10 @@ export default {
 
 <style lang="scss" scoped>
 .menu {
+  .close {
+    top: 20px;
+    right: 20px;
+  }
   .layer-1, .layer-2, .layer-3 {
     width: 100%;
     height: 100%;

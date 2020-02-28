@@ -19,6 +19,5 @@ export default {
   position: relative;
   width: 100%;
   height: auto;
-  background-color: white;
 }
 </style>

@@ -2,8 +2,8 @@
   <div class="home">
     <Header />
     <div class="section-1">
-      <div class="container mx-auto">
-        <div class="text-5xl text-center text-gray-900">
+      <div class="container mx-auto px-5 md:px-0">
+        <div class="text-4xl md:text-5xl text-center">
           We specialize in mobile apps. In fact, that’s the only thing we do, so we have well-established processes and a well-coordinated team of developers.
           Take a look
           mobile apps launched

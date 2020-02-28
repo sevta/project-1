@@ -1,7 +1,7 @@
 <template>
-  <div class="navbar w-full z-10 bg-white">
-    <div class="px-10 mx-auto flex items-center py-6 justify-between">
-      <div class="font-sans font-bold">LOGO</div>
+  <div class="navbar w-full z-10">
+    <div class="px-5 md:px-10 mx-auto flex items-center py-6 justify-between">
+      <div class="font-sans text-white font-bold text-2xl">S.A SAPUTRA</div>
       <BurgerMenu />
     </div>
   </div>

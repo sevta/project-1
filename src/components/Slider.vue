@@ -12,8 +12,9 @@
             v-on:before-leave="beforeLeave"
             v-on:leave="leave"
           >
-            <div class="img shadow" v-if="animateToggle">
-              <img :src="img" alt="">
+            <div class="img-container shadow bg-gray-700" v-if="animateToggle">
+              <div class="back-layer"></div>
+              <img class="img shadow-lg" v-if="animateToggle" :src="img" alt="">
             </div>
           </transition>
         </div>
@@ -44,7 +45,7 @@ export default {
     interval: null,
     currentIndex: 0,
     slideDuration: 5000,
-    animateToggle: true
+    animateToggle: true,
   }),
   computed: {
     label() {
@@ -93,7 +94,7 @@ export default {
     leave(el, done) {
       console.log('leave', el)
       let that = this
-      TweenLite.to(el, 1, {
+      TweenLite.to(el, .7, {
         y: '-40%',
         autoAlpha: 0,
         onComplete() {
@@ -118,23 +119,34 @@ export default {
     .homepage-slider--label {
       width: 100%;
       text-align: center;
-      font-size: 60px;
+      font-size: 110px;
       color: #ff5f00;
       z-index: 5;
+      @include breakpoint(phone) {
+        font-size: 40px;
+      }
     }
     .homepage-slider--img {
       @include size(100%, auto);
       @include absolute-center;
       @include flex-center;
       z-index: 4;
-      .img {
+      .img-container {
         position: relative;
         @include size(300px, auto);
-        background-color: whitesmoke;
+       
+        .back-layer {
+          @include size(100%, 100%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          
+        }
         img {
           width: 100%;
           height: auto;
           object-fit: cover;
+          transform: rotate(-15deg);
           object-position: center;
         }
       }
