@@ -12,8 +12,16 @@ module.exports = {
     colors: {
       transparent: 'transparent',
 
+      tYellow: '#f8b500',
+      tBlack: '#252a34',
+      tGray: '#5c636e',
+      tWhite: '#eaeaea',
+      tRed: '#ff2e63',
+      tBlue: '#08d9d6',
+
       black: '#000',
       white: '#fff',
+      
 
       gray: {
         100: '#f7fafc',
@@ -223,6 +231,9 @@ module.exports = {
       default: '1',
     },
     fontFamily: {
+      heading: 'Lacquer',
+      heading2: 'Anton',
+      heading3: 'Dancing Script',
       sans: [
         'system-ui',
         '-apple-system',

@@ -1,6 +1,6 @@
 <template>
   <div class="burger-menu shadow-lg" @click="toggleMenu">
-    <div class="burger-menu--inner bg-teal-500 text-white">
+    <div class="burger-menu--inner bg-tRed text-white">
       <div class="text-sm font-bold font-sans z-10">Menu</div>
     </div>
     <!-- <span></span>
@@ -65,7 +65,6 @@ export default {
       position: relative;
       @include size(100%, 100%);
       z-index: 6;
-      background-color: #ff5f00;
       @include flex-center();
       transition: all .3s ease;
       &:hover {

@@ -3,7 +3,7 @@
     <div class="homepage-slider font-sans">
       <div class="homepage-slider--inner">
         <transition name='fadeUp'>
-          <div class="homepage-slider--label text-yellow-600 text-shadow font-bold" v-if="animateToggle">{{ label }}</div>
+          <div class="homepage-slider--label text-left text-gray-900 font-heading text-tBlack text-shadow" v-if="animateToggle" v-html="label"></div>
         </transition>
         <div class="homepage-slider--img">
           <transition
@@ -12,7 +12,7 @@
             v-on:before-leave="beforeLeave"
             v-on:leave="leave"
           >
-            <div class="img-container shadow bg-gray-700" v-if="animateToggle">
+            <div class="img-container shadow bg-gray-200" v-if="animateToggle">
               <div class="back-layer"></div>
               <img class="img shadow-lg" v-if="animateToggle" :src="img" alt="">
             </div>
@@ -30,15 +30,15 @@ export default {
   data: () => ({
     items: [
       {
-        label: 'We are we want is',
+        label: 'Lorem ipsum dolor, sit amet consectetur <span class="text-tRed">adipisicing</span> elit. A quas sequi vitae harum similique molestias neque iure! Dolorum totam accusantium neque corrupti quidem iusto cum, laborum provident facilis. Quos, itaque.',
         img: 'https://images.pexels.com/photos/2318776/pexels-photo-2318776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
       },
       {
-        label: 'We are we want is 2',
+        label: 'Lorem ipsum dolor, sit amet consectetur <span class="text-tRed">adipisicing</span> elit. A quas sequi vitae harum similique molestias neque iure! Dolorum totam accusantium neque corrupti quidem iusto cum, laborum provident facilis. Quos, itaque.',       
         img: 'https://images.pexels.com/photos/3393793/pexels-photo-3393793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
       },
       {
-        label: 'We are we want is 3',
+        label: 'Lorem ipsum dolor, sit amet consectetur <span class="text-tRed">adipisicing</span> elit. A quas sequi vitae harum similique molestias neque iure! Dolorum totam accusantium neque corrupti quidem iusto cum, laborum provident facilis. Quos, itaque.',
         img: 'https://images.pexels.com/photos/3596282/pexels-photo-3596282.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
       },
     ],
@@ -116,12 +116,24 @@ export default {
     position: relative;
     @include size(100%, auto);
     @include flex-center;
+    justify-content: flex-start;
     .homepage-slider--label {
-      width: 100%;
-      text-align: center;
-      font-size: 110px;
-      color: #ff5f00;
+      position: relative;
+      width: 50%;
+      text-align: left;
+      padding-left: 3vw;
+      font-size: 45px;
+      // color: #ff5f00;
       z-index: 5;
+      &::before {
+        display: none;
+        content: '';
+        @include size(50%, 4px);
+        background-color: black;
+        position: absolute;
+        bottom: -5px;
+        right: 0px;
+      }
       @include breakpoint(phone) {
         font-size: 40px;
       }
@@ -130,10 +142,12 @@ export default {
       @include size(100%, auto);
       @include absolute-center;
       @include flex-center;
+      justify-content: flex-end;
+      padding-right: 10vw;
       z-index: 4;
       .img-container {
         position: relative;
-        @include size(300px, auto);
+        @include size(350px, auto);
        
         .back-layer {
           @include size(100%, 100%);

@@ -1,5 +1,5 @@
 <template>
-  <div class="pointer" ref="pointer"></div>
+  <div class="pointer bg-tRed" ref="pointer"></div>
 </template>
 
 <script>
@@ -38,7 +38,6 @@ export default {
 @import '../../node_modules/mymixins/index';
 .pointer {
   @include size(20px, 20px);
-  background-color: #ff5f00;
   border-radius: 50%;
   position: absolute;
   top: 0;

@@ -3,10 +3,13 @@
     <Header />
     <div class="section-1">
       <div class="container mx-auto px-5 md:px-0">
-        <div class="text-4xl md:text-5xl text-center">
-          We specialize in mobile apps. In fact, that’s the only thing we do, so we have well-established processes and a well-coordinated team of developers.
+        <div class="text-4xl md:text-3xl text-center">
+          <!-- We specialize in mobile apps. In fact, that’s the only thing we do, so we have well-established processes and a well-coordinated team of developers.
           Take a look
-          mobile apps launched
+          mobile apps launched -->
+        </div>
+        <div class="btn-container flex items-center justify-center">
+          <Button />
         </div>
       </div>
     </div>
@@ -15,13 +18,14 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import Header from '@/components/Header.vue'
+import Header from '@/components/Header'
+import Button from '@/components/Button'
 
 export default {
   name: 'Home',
   components: {
-    Header
+    Header,
+    Button
   },
 }
 </script>

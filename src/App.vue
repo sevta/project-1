@@ -3,8 +3,7 @@
     <Navbar />
     <Menu :show="menuOpen" />
     <Command v-if="showCommandLine" />
-    <Pointer />
-    <div class="scroll-container bg-gray-900 text-white">
+    <div class="scroll-container text-black">
       <router-view/>
     </div>
   </div>
@@ -31,7 +30,7 @@ export default {
     smoothScrollbarInstance: null,
     scrollY: 0,
     showMenu: false,
-    showCommandLine: false
+    showCommandLine: true
   }),
   components: {
     Menu,
@@ -44,7 +43,18 @@ export default {
   },
   methods: {
     initSmoothScrollbar() {
-      SmoothScrollbar.init(document.querySelector('.scroll-container'))
+      this.smoothScrollbarInstance = SmoothScrollbar.init(document.querySelector('.scroll-container'))
+
+      this.smoothScrollbarInstance.addListener(evt => {
+        let y = evt.offset.y
+        if (y > 100) {
+          document.querySelector('.navbar').classList.add('shadow-lg', 'bg-white', 'py-3')
+          return
+        } else {
+          document.querySelector('.navbar').classList.remove('shadow-lg', 'py-3')
+          return
+        }
+      })
     }
   }
 }
